@@ -9,9 +9,9 @@ col1, col2 = st.columns(2)
 with col1:
     st.markdown("### Desenhe aqui:")
     canvas = st_canvas(
-        background_color="#FFFFFF", 
-        stroke_color="#000000",     
-        stroke_width=18,            #(essencial para o resize!)
+        background_color="#000000",  # Fundo Preto
+        stroke_color="#FFFFFF",  # Traço Branco
+        stroke_width=18,
         height=280,
         width=280,
         drawing_mode="freedraw",

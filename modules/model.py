@@ -1,25 +1,21 @@
-import tensorflow as tf
 import numpy as np
+import tensorflow as tf
 from PIL import Image
 
-# CARREGAR APENAS UMA VEZ (Fora da função)
-# Isso evita ler o disco a cada frame desenhado
-MODELO = tf.keras.models.load_model("model/tf_model.h5")
+MODELO = tf.keras.models.load_model("model/modelo_mnist.keras")
+
 
 def preverImagem(imagem):
-    # Converte o array NumPy (RGBA) para PIL Image, depois para escala de cinza
-    img = Image.fromarray(imagem.astype(np.uint8)).convert('L').resize((28, 28))
+    # Converter para escala de cinza e redimensionar para 28x28
+    img = Image.fromarray(imagem.astype(np.uint8)).convert("L").resize((28, 28))
 
+    #  Normalizar entre 0.0 e 1.0
     img_array = np.array(img, dtype=np.float32) / 255.0
 
-    # INVERSÃO DE CORES CRUCIAL:
-    # Se a imagem tiver fundo majoritariamente claro (média > 0.5), invertemos.
-    # Isso garante que o fundo seja preto (0) e o desenho seja branco (1)
-    if np.mean(img_array) > 0.5:
-        img_array = 1.0 - img_array
-
+  # Adicionar dimensões de batch e canal: (1, 28, 28, 1)
     img_array = img_array.reshape(1, 28, 28, 1)
 
+    # Predição
     raw_data = MODELO.predict(img_array)
 
     probs = raw_data[0]
