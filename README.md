@@ -12,13 +12,12 @@
   <b>Um aplicativo web interativo que reconhece dígitos desenhados na tela usando Deep Learning.</b>
 </p>
 
----
 
 ## Sobre o Projeto
 
 Este projeto foi desenvolvido com foco no estudo prático de **Inteligência Artificial** e **Visão Computacional**. A aplicação permite que o usuário desenhe qualquer número de **0 a 9** em um canvas interativo na Web, e um modelo de rede neural treinado com **TensorFlow / Keras** faz a predição em tempo real de qual dígito foi desenhado.
 
----
+
 
 ## Demonstração
 
@@ -26,17 +25,14 @@ Este projeto foi desenvolvido com foco no estudo prático de **Inteligência Art
   <img src="media/print.png" alt="Demonstração do funcionamento do projeto" width="700px">
 </div>
 
----
+
 
 ## Tecnologias Utilizadas
 
 - **[Python](https://www.python.org/)** - Linguagem principal do projeto.
 - **[TensorFlow / Keras](https://www.tensorflow.org/)** - Criação, treinamento e inferência do modelo de rede neural.
-- **[Streamlit](https://streamlit.io/)** - Interface web rápida e interativa.
 - **[Streamlit Drawable Canvas](https://github.com/andfanilo/streamlit-drawable-canvas)** - Componente para desenho do dígito na tela.
-- **[NumPy](https://numpy.org/) & [OpenCV / Pillow](https://pillow.readthedocs.io/)** - Processamento e pré-processamento de imagens.
 
----
 
 ## Como Funciona o Modelo?
 
